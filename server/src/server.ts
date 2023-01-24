@@ -1,5 +1,5 @@
 import express from 'express'
-
+import cors from 'cors'
 import { PrismaClient}  from '@prisma/client'
 import { convertHoursToMinute, convertMinuteToHours } from './Util/convertHoursToMinute';
 
@@ -8,8 +8,8 @@ import { convertHoursToMinute, convertMinuteToHours } from './Util/convertHoursT
 const app = express ();
 const port = 7951
 
-app.use(express.json())
-
+app.use(express.json());
+app.use(cors());
 const prisma = new PrismaClient();
 
 app.get("/games", async(req,res) =>{

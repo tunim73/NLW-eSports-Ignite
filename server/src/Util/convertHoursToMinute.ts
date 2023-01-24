@@ -10,5 +10,5 @@ export function convertMinuteToHours (time:number) {
     const hours = Math.floor(time/60)
     const minute = time % 60;
 
-    return `${hours}:${minute}`
+    return `${String(hours).padStart(2,'0')}:${String(minute).padStart(2,'0')}`
 }
